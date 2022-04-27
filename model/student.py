@@ -1,4 +1,8 @@
 class Student:
+    def __init__(self, my_dict):
+        self.identification = None
+        for key in my_dict:
+            setattr(self, key, my_dict[key])
     """
     def __init__(self,identification,gender, salary,job,name,edad,zonaRural,city):
         self.idenfication = identification
@@ -16,6 +20,3 @@ class Student:
         for key in my_dict:
             setattr(self, key, my_dict[key])
   """
-    def __init__(self, my_dict):
-        for key in my_dict:
-            setattr(self, key, my_dict[key])

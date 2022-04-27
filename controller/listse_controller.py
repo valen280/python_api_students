@@ -20,3 +20,29 @@ def save_student():
     except Exception as e:
         return Response(status=200,response=json.dumps({"message":str(e)}),
                     mimetype="application/json")
+
+@app_list_se.route('/list_se/addtostart',methods=['POST'])
+def save_student_to_start():
+    data = request.json
+    try:
+        list_se_service.add_student_to_start(data)
+        return Response(status=200,response=json.dumps({"message":"Adicionado exitosamente"}),
+                    mimetype="application/json")
+    except Exception as e:
+        return Response(status=200,response=json.dumps({"message":str(e)}),
+                    mimetype="application/json")
+
+@app_list_se.route('/list_se/invert')
+def invert():
+    return Response (status=200, response = json.dumps(list_se_service.invert(), cls=UtilEncoder),
+                    mimetype="application/json")
+
+@app_list_se.route('/list_se/changeXtrems')
+def changeXtrems():
+    return Response (status=200, response = json.dumps(list_se_service.changeXtremes(), cls=UtilEncoder),
+                    mimetype="application/json")
+
+@app_list_se.route('/list_se/deletedata/<identification>')
+def deletedata(identification):
+    return Response (status=200, response = json.dumps(list_se_service.deletedata(id).deletedata(identification), cls=UtilEncoder),
+                    mimetype="application/json")
