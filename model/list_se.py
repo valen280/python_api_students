@@ -64,11 +64,34 @@ class ListSE:
             temp = self.head
             while temp.next != None:
                 if temp.next.data.id == id:
-                    temp.next == temp.next.next
+                    temp.next = temp.next.next
                     break
                 temp = temp.next
 
-
-
+    def woman_first(self):
+        list_cp = ListSE()
+        temp = self.head
+        while temp != None:
+            if temp.data.gender == 2:
+                list_cp.add_to_start(temp.data)
+            else:
+                list_cp.add(temp.data)
+            temp = temp.next
+        self.head = list_cp.head
+"""
+    def insert_position(self):
+        count=0
+        position = self.head
+        if self.head != None:
+            if position > 0 and position <= count +1:
+                add_to_star(Student)
+            else:
+                temp = self.head
+                count = 1
+                if count == position -1:
+                    new_nodo = None(data)
+                    new_nodo = new_node.next
+                    pass
+"""
 
 

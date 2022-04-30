@@ -17,8 +17,9 @@ class ListSECircle:
             while temp.next != self.head:
                 temp = temp.next
                 # posicionados en el ultimo
-                temp.next = Node(data)
-                temp.next.next = self.head
+            temp.next = Node(data)
+            temp.next.next = self.head
+            self.head = temp.next
 
     def add_to_start_circle(self, data: Student):
         if self.head == None:
@@ -31,8 +32,9 @@ class ListSECircle:
             while temp.next != self.head:
                 temp = temp.next
                 # posicionados en el ultimo
-                temp.next = Node(data)
-                temp.next.next = self.head
+            temp.next = Node(data)
+            temp.next.next = self.head
+            self.head = temp.next
 
     def count_listSECircle(self):
         list_students_circle : []
@@ -45,4 +47,4 @@ class ListSECircle:
                 temp = temp.next
                 count = count + 1
                 list_students_circle.append(temp.data)
-        return list_students_circle
+        return count
