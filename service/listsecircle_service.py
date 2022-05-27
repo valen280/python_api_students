@@ -1,5 +1,5 @@
 from model.student import Student
-from model.ListSECircle import ListSECircle
+from model.list_se_circle import ListSECircle
 class ListSECircle:
 
     cities = ['Manizales', 'Pereira', 'Chinchina', 'Armenia']
